@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "com.diffplug.gradle.spotless" version "4.5.1"
     id 'application'
 }
 
@@ -27,3 +28,21 @@ jar {
         configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
+
+spotless {
+    java {
+        importOrder()
+        removeUnusedImports()
+
+        googleJavaFormat().aosp()
+
+        trimTrailingWhitespace()
+        indentWithSpaces(4)
+        endWithNewline()
+    }
+}
+def hook = new File("$rootProject.projectDir/.git/hooks/pre-commit")
+hook.text = """#!/bin/bash
+echo "Running code formatting"
+./gradlew spotlessApply
+"""
