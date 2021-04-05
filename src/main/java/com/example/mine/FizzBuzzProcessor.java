@@ -1,17 +1,14 @@
 package com.example.mine;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
 
 public class FizzBuzzProcessor {
-    public static void main( String[] args ) throws Exception {
+    public static void main(String[] args) throws Exception {
         for (int i = 1; i <= 100; i++) {
             System.out.println(convert(i));
         }
     }
 
-    public static String convert( int fizzBuzz ) {
-      if (fizzBuzz % 15== 0) {
+    public static String convert(int fizzBuzz) {
+        if (fizzBuzz % 15 == 0) {
             return "FizzBuzz";
         }
         if (fizzBuzz % 3 == 0) {
