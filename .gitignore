@@ -1,0 +1,40 @@
+# Directories #
+build/
+target/
+*.class
+applications/web/yarn.lock
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.db
+
+######################
+# Windows
+######################
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+######################
+# IntelliJ IDEA
+######################
+.idea/
+*.iml
+*.idx
+*.pack
+ideConfig/refs/heads/master
+ideConfig/objects/pack
+/de/
+rebel.xml
+out/
+
+Jenkinsfile.example
+/.classpath
+/.factorypath
+/.project
+
+/.gradle/
