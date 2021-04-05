@@ -41,8 +41,3 @@ spotless {
         endWithNewline()
     }
 }
-def hook = new File("$rootProject.projectDir/.git/hooks/pre-commit")
-hook.text = """#!/bin/bash
-echo "Running code formatting"
-./gradlew spotlessApply
-"""
