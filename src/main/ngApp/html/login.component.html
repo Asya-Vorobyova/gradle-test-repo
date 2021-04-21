@@ -1,0 +1,80 @@
+<div class="oms__login-background">
+    <div class="oms__login-background-image"></div>
+    <img src="../images/stroeer_logo.png" class="oms__login-logo"/>
+</div>
+<mat-card class="oms__login-form">
+    <mat-card-header class="oms__login-title">
+        <mat-card-title>Online Maintenance System</mat-card-title>
+        <mat-card-subtitle>
+            <span *ngIf="serverEnvironment !== ServerEnvironmentKey.Live"
+                  [ngClass]="{'oms__login-environment-indicator': true,
+                              'oms__login-environment-indicator--local': serverEnvironment === ServerEnvironmentKey.Local,
+                              'oms__login-environment-indicator--stage': serverEnvironment === ServerEnvironmentKey.Stage}">
+                {{ServerEnvironmentKey[serverEnvironment]|uppercase}}
+            </span>
+            <span>Version {{programVersion}}</span>
+        </mat-card-subtitle>
+    </mat-card-header>
+
+    <ng-container *ngIf="showForgotPassword; else loginTemplate">
+        <!-- Passwort sent message -->
+        <mat-card-content *ngIf="passwordResetSent; else passwordNotSent">
+            <p>{{passwordResetMessage}}</p>
+        </mat-card-content>
+
+        <!-- Forgot Password Form -->
+        <ng-template #passwordNotSent>
+            <mat-card-content>
+                <p>Bitte geben Sie Ihre E-Mail-Adresse ein. Sie bekommen automatisch per Mail einen Aktivierungslink, über den Sie ein neues Passwort eingeben können.</p>
+                <form>
+                    <mat-form-field class="example-full-width">
+                        <input matInput type="email" name="email" placeholder="Email" autocomplete="email" [formControl]="emailFormControl"/>
+                        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                            Bitte geben Sie eine gültige Email ein.
+                        </mat-error>
+                    </mat-form-field>
+                </form>
+            </mat-card-content>
+        </ng-template>
+
+        <!-- Forgot Password Actions -->
+        <mat-card-actions>
+            <button mat-button (click)="closePasswordReset()">Zurück</button>
+            <button *ngIf="!passwordResetSent" mat-raised-button color="primary"
+                    [disabled]="isLoading"
+                    (click)="requestPasswordResetLink()">Senden</button>
+        </mat-card-actions>
+
+    </ng-container>
+
+    <ng-template #loginTemplate>
+        <!-- Login Form -->
+        <mat-card-content>
+            <form>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Login" autocomplete="username" [formControl]="loginFormControl"/>
+                    <mat-error *ngIf="loginFormControl.hasError('required')">
+                        Bitte geben Sie ihren Anmeldenamen ein.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput type="password" placeholder="Passwort" autocomplete="current-password" [formControl]="passwordControl"/>
+                    <mat-error *ngIf="passwordControl.hasError('required')">
+                        Bitte geben Sie ihr Passwort ein.
+                    </mat-error>
+                </mat-form-field>
+            </form>
+            <span class="hint--error" *ngIf="loginErrorMessage && loginErrorMessage.length > 0" >{{loginErrorMessage}}</span>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button
+                    (click)="showForgotPassword = true;"
+                    [disabled]="isLoading">Passwort vergessen</button>
+            <button mat-raised-button color="primary"
+                    (click)="login()"
+                    [disabled]="isLoading">Anmelden</button>
+        </mat-card-actions>
+    </ng-template>
+
+</mat-card>

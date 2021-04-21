@@ -1,0 +1,70 @@
+{
+  "items": [ {
+    "messageDetails": {
+      "messageId": 5435842,
+      "title": "Antrieb defekt",
+      "code": "151",
+      "groupTitle": "VPL Ströer (Test)",
+      "counter": 1,
+      "startTime": 1486486909617,
+      "creationTime": 1486486911044,
+      "resolutionTime": 1486551659999,
+      "creationType": "manual",
+      "closingTime": 1486723140517,
+      "deactivationTime": 1486720295586,
+      "isInAccounting": true,
+      "isAutomaticMessage": false,
+      "messageCategoryId": 10,
+      "groupId": 500,
+      "closingType": "manual",
+      "isUnresolvedClosed": false
+    },
+    "advertisingMediumDetails": {
+      "advertisingMediumId": 10371,
+      "zip": "50825",
+      "city": "Köln",
+      "street": "Hinter der alten Eiche (Test)",
+      "type": "IBV, DSWW, PBB Vitrine",
+      "category": "PBB",
+      "manufacturer": "Program Contractors Ltd.",
+      "inventoryNumber": "99000001800",
+      "buildTime": 1289430000000
+    },
+    "accountingDetails": {},
+    "comment": "HUhu"
+  },
+    {
+      "messageDetails": {
+        "messageId": 1,
+        "title": "Antrieb defekt",
+        "code": "151",
+        "groupTitle": "VPL Ströer (Test)",
+        "counter": 1,
+        "appearanceTime": 1486486909617,
+        "creationTime": 1486486911044,
+        "resolutionTime": 1486551659999,
+        "creationType": "manual",
+        "closingTime": 1486723140517,
+        "deactivationTime": 1486720295586,
+        "isInAccounting": true,
+        "isAutomaticMessage": false,
+        "messageCategoryId": 10,
+        "groupId": 500,
+        "closingType": "manual",
+        "isUnresolvedClosed": false
+      },
+      "advertisingMediumDetails": {
+        "advertisingMediumId": 10371,
+        "zip": "50825",
+        "city": "Köln",
+        "street": "Am anfang",
+        "type": "IBV, DSWW, PBB Vitrine",
+        "category": "CLP",
+        "manufacturer": "Program Contractors Ltd.",
+        "inventoryNumber": "99000001800",
+        "buildTime": 1289430000000
+      },
+      "accountingDetails": {},
+      "comment": "HUhu"
+    }]
+}

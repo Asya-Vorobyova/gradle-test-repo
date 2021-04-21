@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration//EN"
+        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+
+    <definition name="login-new-layout" extends="web-module:abstract.login-new-layout">
+        <put-attribute name="body" value="/WEB-INF/jsp/bodies/authorisation/login.jsp"/>
+    </definition>
+
+    <definition name="reset-password-new-layout" extends="web-module:abstract.plain-layout">
+        <put-attribute name="body" value="/WEB-INF/jsp/bodies/authorisation/reset-password.jsp"/>
+    </definition>
+
+    <definition name="reset-password-new-layout-success" extends="web-module:abstract.plain-layout">
+        <put-attribute name="body" value="/WEB-INF/jsp/bodies/authorisation/reset-password-success.jsp"/>
+    </definition>
+
+    <definition name="start-reset-password-new-layout" extends="web-module:abstract.plain-layout">
+        <put-attribute name="body" value="/WEB-INF/jsp/bodies/authorisation/start-reset-password.jsp"/>
+    </definition>
+
+    <definition name="profile" extends="web-module:abstract.dynamic-list-new-layout">
+        <put-attribute name="form-body" value="/WEB-INF/jsp/bodies/authorisation/profile.jsp"/>
+    </definition>
+
+</tiles-definitions>
